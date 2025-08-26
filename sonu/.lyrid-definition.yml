@@ -1,0 +1,14 @@
+name: sonu
+description: Telegram bot with media processing, downloader & uploader
+ignoreFiles: .git venv pycache run cmd.txt runtime.txt
+modules:
+  - name: sonu
+    language: docker
+    description: Deploy Sonu bot using Dockerfile
+    dockerfile: Dockerfile
+    functions:
+      - name: main
+        description: Run bot + web server as defined in Dockerfile CMD
+        ports:
+          - alias: "http"
+            port: 8080
